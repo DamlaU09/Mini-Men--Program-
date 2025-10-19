@@ -1,0 +1,69 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int secim;
+
+    cout << "===== Mini Menü =====\n";
+    cout << "1 - Sayıları Karşılaştır\n";
+    cout << "2 - Not Kontrol\n";
+    cout << "3 - Gün Öğren\n";
+    cout << "Seçiminizi girin: ";
+    cin >> secim;
+
+    switch(secim) {
+        case 1: {
+            // Sayıları Karşılaştırma
+            int sayi1, sayi2;
+            cout << "İki sayı giriniz: ";
+            cin >> sayi1 >> sayi2;
+
+            if(sayi1 > sayi2)
+                cout << sayi1 << " sayısı " << sayi2 << " sayısından büyüktür.\n";
+            else if(sayi1 == sayi2)
+                cout << "Sayılar eşittir.\n";
+            else
+                cout << sayi2 << " sayısı " << sayi1 << " sayısından büyüktür.\n";
+            break;
+        }
+        case 2: {
+            // Not Kontrol
+            int yourNot;
+            cout << "0-100 arasında bir not giriniz: ";
+            cin >> yourNot;
+
+            if (yourNot < 0 || yourNot > 100)
+                cout << "Geçersiz not girdiniz!\n";
+            else if (yourNot < 50)
+                cout << "Dersten kaldınız.\n";
+            else
+                cout << "Dersten geçtiniz.\n";
+            break;
+        }
+        case 3: {
+            // Gün Öğren
+            int gun;
+            cout << "1-3 arasında bir sayı giriniz: ";
+            cin >> gun;
+
+            switch(gun) {
+                case 1:
+                    cout << "Pazartesi\n";
+                    break;
+                case 2:
+                    cout << "Salı\n";
+                    break;
+                case 3:
+                    cout << "Çarşamba\n";
+                    break;
+                default:
+                    cout << "Geçersiz gün!\n";
+            }
+            break;
+        }
+        default:
+            cout << "Geçersiz seçenek!\n";
+    }
+
+    return 0;
+}
